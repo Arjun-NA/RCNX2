@@ -2,4 +2,5 @@
 .idea/
 result/
 __pycache__/
+scripts/Train
 
