@@ -56,7 +56,7 @@ def level(input_shape, n_class, routings):
                                                   strides=2, padding='valid')
 
     # Applying ReLU Activation to primary capsules 
-    conv = layers.Activation(mish)(PrimaryCapsConv2D)
+    conv = layers.Activation('relu')(PrimaryCapsConv2D)
 
     ########################### Level 2 Capsules ###########################
     # Creating a residual block with 8 layers having 32 filters and 32 growth rate.
@@ -69,7 +69,7 @@ def level(input_shape, n_class, routings):
                                                   strides=2, padding='valid')
 
     # Applying ReLU Activation to primary capsules 
-    conv = layers.Activation(mish)(PrimaryCapsConv2D)
+    conv = layers.Activation('relu')(PrimaryCapsConv2D)
 
     ########################### Level 3 Capsules ###########################
     # Creating a residual block with 8 layers having 32 filters and 32 growth rate.
