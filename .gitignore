@@ -1,0 +1,3 @@
+# ignore Pycharm .idea
+.idea/
+result/
