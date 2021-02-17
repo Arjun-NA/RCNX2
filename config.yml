@@ -1,0 +1,26 @@
+authorName: arjun
+experimentName: RCNX2
+trialConcurrency: 16
+maxExecDuration: 48h
+maxTrialNum: 1000
+trainingServicePlatform: local
+multiThread: true
+# The path to Search Space
+searchSpacePath: search_space.json
+useAnnotation: false
+tuner:
+  builtinTunerName: TPE  
+  classArgs:
+    optimize_mode: maximize
+# The path and the running command of trial
+trial:
+  command: python RCNX2.py
+  codeDir: .
+  gpuNum: 1
+localConfig:
+  gpuIndices: 0,1,2,3
+  maxTrialNumPerGpu: 4
+  useActiveGpu: true
+
+
+

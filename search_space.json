@@ -1,0 +1,49 @@
+{
+	"batch_size": {"_type":"choice", "_value": [8, 16, 32, 64, 128]},
+	"optimizer":{"_type":"choice","_value":["adam","nadam","rmsprop","sgd"]},
+
+	"growth_rate1":{"_type":"choice","_value":[8,16,32,64,128]},
+	"growth_rate2":{"_type":"choice","_value":[8,16,32,64,128]},
+	"growth_rate3":{"_type":"choice","_value":[8,16,32,64,128]},
+
+	"nb_layer1":{"_type":"choice","_value":[1,2,3,4]},
+	"nb_layer2":{"_type":"choice","_value":[1,2,3,4]},
+	"nb_layer3":{"_type":"choice","_value":[1,2,3,4]},
+
+	"nb_filters1":{"_type":"choice","_value":[32,16,8,64,128]},
+	"nb_filters2":{"_type":"choice","_value":[32,16,8,64,128]},
+	"nb_filters3":{"_type":"choice","_value":[32,16,8,64,128]},
+
+	"bottleneck1":{"_type":"choice","_value":[0,1]},
+	"bottleneck2":{"_type":"choice","_value":[0,1]},
+	"bottleneck3":{"_type":"choice","_value":[0,1]},
+
+	"activation1":{"_type":"choice","_value":["relu", "elu", "selu", "tanh", "softmax", "sigmoid"]},
+	"activation2":{"_type":"choice","_value":["relu", "elu", "selu", "tanh", "softmax", "sigmoid"]},
+
+	"dim_capsule1":{"_type":"choice","_value":[2,4,6,8]},
+	"dim_capsule2":{"_type":"choice","_value":[2,4,6,8]},
+	"dim_capsule3":{"_type":"choice","_value":[2,4,6,8]},
+
+	"n_channels1":{"_type":"choice","_value":[12,6,8,24,16]},
+	"n_channels2":{"_type":"choice","_value":[12,6,8,24,16]},
+	"n_channels3":{"_type":"choice","_value":[12,6,8,24,16]},
+
+	"kernel_size1":{"_type":"choice","_value":[5,3,7]},
+	"kernel_size2":{"_type":"choice","_value":[5,3,7]},
+	"kernel_size3":{"_type":"choice","_value":[5,3,7]},
+
+	"strides1":{"_type":"choice","_value":[1,2,3]},
+	"strides2":{"_type":"choice","_value":[1,2,3]},
+	"strides3":{"_type":"choice","_value":[1,2,3]},
+
+	"C_dim_capsule1":{"_type":"choice","_value":[8,16,24,32]},
+	"C_dim_capsule2":{"_type":"choice","_value":[8,16,24,32]},
+	"C_dim_capsule3":{"_type":"choice","_value":[8,16,24,32]},
+	"C_dim_capsule4":{"_type":"choice","_value":[8,16,24,32]},
+
+	"routings1":{"_type":"choice","_value":[1,2,3,4]},
+	"routings2":{"_type":"choice","_value":[1,2,3,4]},
+	"routings3":{"_type":"choice","_value":[1,2,3,4]},
+	"routings4":{"_type":"choice","_value":[1,2,3,4]}
+}
