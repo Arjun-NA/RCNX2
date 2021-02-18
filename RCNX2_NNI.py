@@ -47,10 +47,9 @@ def level(input_shape, n_class, routings, hparam=None):
     """-----------------------------------------------"""
     """     Residual Block Hyper parameter            """
     """-----------------------------------------------"""
-    growth_rate = [hparam['growth_rate1'], hparam['growth_rate2'], hparam['growth_rate3']]
-    nb_layers = [hparam['nb_layer1'], hparam['nb_layer2'], hparam['nb_layer3']]
-    bottleneck = [hparam['bottleneck1'], hparam['bottleneck2'], hparam['bottleneck3']]
-    nb_filters = [hparam['nb_filters1'], hparam['nb_filters2'], hparam['nb_filters3']]
+
+    cardinality = [hparam['cardinality1'], hparam['cardinality2'], hparam['cardinality3']]
+    width = [hparam['nb_filters1'], hparam['nb_filters2'], hparam['nb_filters3']]
     activation = [hparam['activation1'],hparam['activation2']]
 
     """----------------------------------------------"""
@@ -76,7 +75,7 @@ def level(input_shape, n_class, routings, hparam=None):
     concat_axis = 1 if K.image_data_format() == 'channels_first' else -1
     ########################### Level 1 Capsules ###########################
     
-    conv = ResNext(nb_classes=10, depth = [1], cardinality=2, width=32, include_top=False, img_input=x)
+    conv = ResNext(nb_classes=10, depth = [1], cardinality=cardinality[0], width=width[0], include_top=False, img_input=x)
     # Batch Normalization
     ResBlockOutput = BatchNormalization(axis=concat_axis, epsilon=1.1e-5)(conv)
 
@@ -91,7 +90,7 @@ def level(input_shape, n_class, routings, hparam=None):
 
     ########################### Level 2 Capsules ###########################
     
-    conv = ResNext(nb_classes=10, depth = [1], cardinality=2, width=32, include_top=False, img_input=conv)
+    conv = ResNext(nb_classes=10, depth = [1], cardinality=cardinality[1], width=width[1], include_top=False, img_input=conv)
     # Batch Normalization
     ResBlockOutput = BatchNormalization(axis=concat_axis, epsilon=1.1e-5)(conv)
 
@@ -104,7 +103,7 @@ def level(input_shape, n_class, routings, hparam=None):
 
     ########################### Level 3 Capsules ###########################
     # Creating a residual block with 8 layers having 32 filters and 32 growth rate.
-    conv = ResNext(nb_classes=10, depth = [1], cardinality=2, width=32, include_top=False, img_input=conv)
+    conv = ResNext(nb_classes=10, depth = [1], cardinality=cardinality[2], width=width[2], include_top=False, img_input=conv)
     # Batch Normalization
     ResBlockOutput = BatchNormalization(axis=concat_axis, epsilon=1.1e-5)(conv)
 

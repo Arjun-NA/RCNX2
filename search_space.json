@@ -2,17 +2,13 @@
 	"batch_size": {"_type":"choice", "_value": [8, 16, 32, 64, 128]},
 	"optimizer":{"_type":"choice","_value":["adam","nadam","rmsprop","sgd"]},
 
-	"growth_rate1":{"_type":"choice","_value":[8,16,32,64,128]},
-	"growth_rate2":{"_type":"choice","_value":[8,16,32,64,128]},
-	"growth_rate3":{"_type":"choice","_value":[8,16,32,64,128]},
+	"nb_filters1":{"_type":"choice","_value":[32,16,8,64]},
+	"nb_filters2":{"_type":"choice","_value":[32,16,8,64]},
+	"nb_filters3":{"_type":"choice","_value":[32,16,8,64]},
 
-	"nb_layer1":{"_type":"choice","_value":[1,2,3,4]},
-	"nb_layer2":{"_type":"choice","_value":[1,2,3,4]},
-	"nb_layer3":{"_type":"choice","_value":[1,2,3,4]},
-
-	"nb_filters1":{"_type":"choice","_value":[32,16,8,64,128]},
-	"nb_filters2":{"_type":"choice","_value":[32,16,8,64,128]},
-	"nb_filters3":{"_type":"choice","_value":[32,16,8,64,128]},
+	"cardinality1": {"_type": "choice","_value": [1,2,4,8]},
+	"cardinality2": {"_type": "choice","_value": [1,2,4,8]},
+	"cardinality3": {"_type": "choice","_value": [1,2,4,8]},
 
 	"bottleneck1":{"_type":"choice","_value":[0,1]},
 	"bottleneck2":{"_type":"choice","_value":[0,1]},
